@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 743747600662925173}
   - component: {fileID: 743747600662925170}
   - component: {fileID: 8454503966549497256}
+  - component: {fileID: 259188916}
+  - component: {fileID: 64275785}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: player
@@ -104,8 +106,11 @@ MonoBehaviour:
   player: {fileID: 743747600662925170}
   tearPrefab: {fileID: 5038430551015072253, guid: 39fa6130022066544a12f698c234ff5d,
     type: 3}
-  tearSpeed: 7
-  fireDelay: 0.5
+  tearSpeed: 8
+  fireDelay: 0.4
+  diemessage: {fileID: 0}
+  isDead: 0
+  animator: {fileID: 0}
 --- !u!50 &743747600662925170
 Rigidbody2D:
   serializedVersion: 4
@@ -138,6 +143,61 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.48, y: 1.25}
+    newSize: {x: 1.48, y: 1.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.14677505, y: -0.21187612}
+      - {x: 0.067248076, y: -0.1590497}
+      - {x: -0.052731685, y: -0.16165817}
+      - {x: -0.13777001, y: -0.2129884}
+      - {x: -0.18261616, y: -0.24507068}
+      - {x: -0.18450655, y: -0.305}
+      - {x: -0.12529032, y: -0.35608643}
+      - {x: -0.069013126, y: -0.41337988}
+      - {x: 0.0785304, y: -0.41177377}
+      - {x: 0.18150386, y: -0.3044259}
+      - {x: 0.18156737, y: -0.24443972}
+--- !u!95 &259188916
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743747600662925169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36fc09d89128a9140bddbe7ff3ee01d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &64275785
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743747600662925169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

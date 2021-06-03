@@ -11,6 +11,13 @@ TagManager:
   - player
   - tear
   - bat
+  - boss
+  - bomb
+  - sign
+  - doorclosed
+  - barrage
+  - barrage2
+  - barrage3
   layers:
   - Default
   - TransparentFX

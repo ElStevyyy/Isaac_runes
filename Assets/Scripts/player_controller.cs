@@ -24,11 +24,13 @@ public class player_controller : MonoBehaviour
     private int coeurs;
     public TMP_Text diemessage;
     public bool isDead = false;
-    
+    private bool hittable = true;
+    public Animator animator;
 
     private void Start()
     {
         coeurs = 5;
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,11 @@ public class player_controller : MonoBehaviour
 
             deplacement = new Vector2(moveHorizontal, moveVertical);
             player.velocity = deplacement * speed;
+
+            if (!hittable)
+            {
+                
+            }
         }
     }
 
@@ -82,13 +89,15 @@ public class player_controller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Hit()
     {
-        if (collision.gameObject.tag == "bat")
+        if (hittable == true)
         {
             GameObject coeur = GameObject.Find("heart" + coeurs);
             coeurs--;
             coeur.SetActive(false);
+            hittable = false;
+            animator.SetTrigger("Hitted");
 
             if (coeurs == 0)
             {
@@ -100,7 +109,31 @@ public class player_controller : MonoBehaviour
                 StartCoroutine(GoToMenu());
             }
         }
+    }
 
+    void InvincibilityFrameOff()
+    {
+        hittable = true;
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "bat")
+        {
+            Hit();
+        }
+
+        if (collision.gameObject.tag == "boss")
+        {
+            Hit();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bomb")
+        {
+            Hit();
+        }
     }
 }

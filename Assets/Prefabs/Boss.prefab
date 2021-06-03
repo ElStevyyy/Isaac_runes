@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3046521153556918403}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3aa9e007c7763b84eb352f4ac26c2a7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -143,3 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1b39280a64e52438a750e9e7cf85e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
+  current_health: 0
+  healthbar: {fileID: 0}
+  speed: 2
+  spriterenderer: {fileID: 5652306169026679113}
+  standSprite: {fileID: 21300000, guid: 125b62e2180e552419b923bd30bc68b0, type: 3}
+  moveSprite: {fileID: 21300000, guid: 3aa9e007c7763b84eb352f4ac26c2a7e, type: 3}
+  shieldSprite: {fileID: 21300000, guid: f45be796d2848ab4784834fb09872866, type: 3}
+  bat: {fileID: 2664763472885892321, guid: dc16f74fc9d16c24a8afc1265eec6025, type: 3}
+  bomb: {fileID: 276537594551518383, guid: 0e937472dfbb89148956f05034538d31, type: 3}

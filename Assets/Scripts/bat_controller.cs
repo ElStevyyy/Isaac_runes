@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class bat_controller : MonoBehaviour
 {
-
-    public Rigidbody2D Player;
     public int moveSpeed;
     public int minDistance;
     public int health;
-    public GameObject player;
+    private GameObject joueur;
     private player_controller script_player;
 
     private void Start()
     {
-        health = 10;
-        script_player = player.GetComponent<player_controller>();
+        joueur = GameObject.Find("Joueur");
+        script_player = joueur.GetComponent<player_controller>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (script_player.isDead == false)
         {
             // déplacements
-            if (Vector2.Distance(transform.position, Player.position) > minDistance)
+            if (Vector2.Distance(transform.position, joueur.transform.position) > minDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.position, moveSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, joueur.transform.position, moveSpeed * Time.deltaTime);
             }
         }
     }
