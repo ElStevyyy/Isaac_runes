@@ -121,22 +121,32 @@ public class boss_controller : MonoBehaviour
     {
         Debug.Log("JERAAAAAAA");
         GameObject[] nbBat = GameObject.FindGameObjectsWithTag("bat");
-
-        for (int i=0; i<nbBat.Length; i++)
+        if (nbBat.Length <= 0)
         {
-            switch (Random.Range(1, 5)){
-                case 1:
-                    Instantiate(bat, new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), new Quaternion(0, 0, 0, 0));
-                    break;
-                case 2:
-                    Instantiate(bat, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), new Quaternion(0, 0, 0, 0));
-                    break;
-                case 3:
-                    Instantiate(bat, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
-                    break;
-                case 4:
-                    Instantiate(bat, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), new Quaternion(0, 0, 0, 0));
-                    break;
+            Instantiate(bat, new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), new Quaternion(0, 0, 0, 0));
+        }
+        else
+        {
+            for (int i = 0; i < nbBat.Length; i++)
+            {
+                if (nbBat.Length < 10)
+                {
+                    switch (Random.Range(1, 5))
+                    {
+                        case 1:
+                            Instantiate(bat, new Vector3(transform.position.x + 1, transform.position.y, transform.position.z), new Quaternion(0, 0, 0, 0));
+                            break;
+                        case 2:
+                            Instantiate(bat, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), new Quaternion(0, 0, 0, 0));
+                            break;
+                        case 3:
+                            Instantiate(bat, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+                            break;
+                        case 4:
+                            Instantiate(bat, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), new Quaternion(0, 0, 0, 0));
+                            break;
+                    }
+                }
             }
         }
     }
