@@ -9,6 +9,10 @@ public class bat_controller : MonoBehaviour
     public int health;
     private GameObject joueur;
     private player_controller script_player;
+    public AudioClip bat_hit;
+    public SpriteRenderer spriterenderer;
+    public Sprite hitSprite;
+    public Sprite moveSprite;
 
     private void Start()
     {
@@ -33,7 +37,10 @@ public class bat_controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "tear")
         {
+            spriterenderer.sprite = hitSprite;
             health--;
+            AudioSource.PlayClipAtPoint(bat_hit, transform.position, 0.2f);
+            StartCoroutine(Bathit());
 
             // quand l'ennemi a plus de vie, il despawn
             if (health == 0)
@@ -41,5 +48,11 @@ public class bat_controller : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private IEnumerator Bathit()
+    {
+        yield return new WaitForSeconds(0.1f);
+        spriterenderer.sprite = moveSprite;
     }
 }

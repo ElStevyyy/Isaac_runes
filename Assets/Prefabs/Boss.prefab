@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -151,5 +152,11 @@ MonoBehaviour:
   standSprite: {fileID: 21300000, guid: 125b62e2180e552419b923bd30bc68b0, type: 3}
   moveSprite: {fileID: 21300000, guid: 3aa9e007c7763b84eb352f4ac26c2a7e, type: 3}
   shieldSprite: {fileID: 21300000, guid: f45be796d2848ab4784834fb09872866, type: 3}
+  boss_hit: {fileID: 8300000, guid: 6c5be636bf940ee4c9e31cbcb8abbe1b, type: 3}
+  jera_sound: {fileID: 8300000, guid: e5e9004a4f09e2e4bb689e709f26f2a1, type: 3}
+  dagaz_sound: {fileID: 8300000, guid: 1d14ac604447ec244945a9b4e67a1e14, type: 3}
+  hagalaz_sound: {fileID: 8300000, guid: cfc3bab0df58d8943a52382983041809, type: 3}
+  berkano_sound: {fileID: 8300000, guid: e75c8440a20f11245b6b575943bdfd86, type: 3}
+  shield_sound: {fileID: 8300000, guid: 47a1bd4ebc368a4408ed282741011ad8, type: 3}
   bat: {fileID: 2664763472885892321, guid: dc16f74fc9d16c24a8afc1265eec6025, type: 3}
   bomb: {fileID: 276537594551518383, guid: 0e937472dfbb89148956f05034538d31, type: 3}

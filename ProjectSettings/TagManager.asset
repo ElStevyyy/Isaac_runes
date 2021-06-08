@@ -18,6 +18,7 @@ TagManager:
   - barrage
   - barrage2
   - barrage3
+  - music
   layers:
   - Default
   - TransparentFX

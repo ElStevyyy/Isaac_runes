@@ -21,15 +21,17 @@ public class player_controller : MonoBehaviour
     public float tearSpeed;
     private float lastFire;
     public float fireDelay;
-    private int coeurs;
+    private int coeurs = 5;
     public TMP_Text diemessage;
     public bool isDead = false;
     private bool hittable = true;
     public Animator animator;
+    public GameObject[] children;
+    private bool hit = false;
+    public AudioClip player_hit;
 
     private void Start()
     {
-        coeurs = 5;
         animator = gameObject.GetComponent<Animator>();
     }
 
@@ -50,10 +52,6 @@ public class player_controller : MonoBehaviour
             deplacement = new Vector2(moveHorizontal, moveVertical);
             player.velocity = deplacement * speed;
 
-            if (!hittable)
-            {
-                
-            }
         }
     }
 
@@ -121,11 +119,13 @@ public class player_controller : MonoBehaviour
         if (collision.gameObject.tag == "bat")
         {
             Hit();
+            if (hit == false){StartCoroutine(Playerhit());}
         }
 
         if (collision.gameObject.tag == "boss")
         {
             Hit();
+            if (hit == false) { StartCoroutine(Playerhit()); }
         }
     }
 
@@ -134,6 +134,15 @@ public class player_controller : MonoBehaviour
         if (collision.gameObject.tag == "bomb")
         {
             Hit();
+            if (hit == false) { StartCoroutine(Playerhit()); }
         }
+    }
+
+    private IEnumerator Playerhit()
+    {
+        hit = true;
+        AudioSource.PlayClipAtPoint(player_hit, transform.position, 0.3f);
+        yield return new WaitForSeconds(2);
+        hit = false;
     }
 }

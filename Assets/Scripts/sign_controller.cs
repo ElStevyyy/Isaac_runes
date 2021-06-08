@@ -9,6 +9,8 @@ public class sign_controller : MonoBehaviour
     public GameObject sign;
     public TMP_Text readsign;
     public bool signRed = false;
+    public AudioClip panel_sound;
+    private bool isTrigger = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {

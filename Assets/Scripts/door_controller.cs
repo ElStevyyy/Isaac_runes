@@ -8,13 +8,20 @@ public class door_controller : MonoBehaviour
     private GameObject sign;
     private GameObject barrage;
     private sign_controller panneau;
- 
+    public AudioClip door_open;
+
+    private player_controller script_player;
+    private GameObject joueur;
+
 
     private void Start()
     {
         sign = GameObject.FindGameObjectWithTag("sign");
         panneau = sign.GetComponent<sign_controller>();
         barrage = GameObject.FindGameObjectWithTag("barrage");
+
+        joueur = GameObject.Find("Joueur");
+        script_player = joueur.GetComponent<player_controller>();
     }
 
     // Update is called once per frame
@@ -23,6 +30,7 @@ public class door_controller : MonoBehaviour
         if (panneau.signRed)
         {
             doorclosed.SetActive(false);
+            AudioSource.PlayClipAtPoint(door_open, joueur.transform.position, 1);
             barrage.SetActive(false);
         }
     }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8454503966549497256}
   - component: {fileID: 259188916}
   - component: {fileID: 64275785}
+  - component: {fileID: -949947045255852138}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: player
@@ -51,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -74,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b4a08c21f7db8494696aab00a05fb339, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,6 +113,9 @@ MonoBehaviour:
   diemessage: {fileID: 0}
   isDead: 0
   animator: {fileID: 0}
+  children:
+  - {fileID: 0}
+  player_hit: {fileID: 8300000, guid: a13658799651fb94c91d04d3e424d3d3, type: 3}
 --- !u!50 &743747600662925170
 Rigidbody2D:
   serializedVersion: 4
@@ -223,3 +228,11 @@ PolygonCollider2D:
       - {x: 0.0785304, y: -0.41177377}
       - {x: 0.18150386, y: -0.3044259}
       - {x: 0.18156737, y: -0.24443972}
+--- !u!81 &-949947045255852138
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743747600662925169}
+  m_Enabled: 1
